@@ -24,14 +24,7 @@ export class HomePage {
 
   del(id)
   {
-    for (var i=0; i < this.despesas.length; i++)
-    {
-      if (this.despesas[i].id == id)
-      {
-        this.despesas.splice(i, 1);
-      }
-    }
-    this.localStorageService.set("despesas", JSON.stringify(this.despesas));
+    this.desProv.delete(id);
   }
 
 }

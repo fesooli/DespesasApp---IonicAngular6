@@ -31,6 +31,18 @@ export class DespesaProvider {
       this.getDb();
       this.despesas.push(despesa);
       this.localStorageService.set("despesas", JSON.stringify(this.despesas));
+  }
+
+  delete(id)
+  {
+    for (var i=0; i < this.despesas.length; i++)
+    {
+      if (this.despesas[i].id == id)
+      {
+        this.despesas.splice(i, 1);
+      }
     }
+    this.localStorageService.set("despesas", JSON.stringify(this.despesas));
+  }
 
 }
